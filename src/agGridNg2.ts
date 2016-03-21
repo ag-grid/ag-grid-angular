@@ -1,14 +1,12 @@
 
 import {Grid, GridOptions, GridApi, ColumnController, ColumnApi, ComponentUtil, Events} from 'ag-grid/main';
-import {Component, View, EventEmitter, ViewEncapsulation, ElementRef} from 'angular2/core';
+import {Component, EventEmitter, ViewEncapsulation, ElementRef} from 'angular2/core';
 
 @Component({
     selector: 'ag-grid-ng2',
-    outputs: ComponentUtil.EVENTS,
-    inputs: ComponentUtil.ALL_PROPERTIES.concat(['gridOptions'])
-})
-@View({
     template: '',
+    outputs: ComponentUtil.EVENTS,
+    inputs: ComponentUtil.ALL_PROPERTIES.concat(['gridOptions']),
     // tell angular we don't want view encapsulation, we don't want a shadow root
     encapsulation: ViewEncapsulation.None
 })
