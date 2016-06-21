@@ -1,4 +1,4 @@
-import {Grid, GridOptions, GridApi, ColumnApi, ComponentUtil} from 'ag-grid/main';
+import {Grid, GridOptions, GridApi, ColumnApi, ComponentUtil} from 'ag-grid';
 import {Component, EventEmitter, ViewEncapsulation, ElementRef} from '@angular/core';
 
 @Component({
