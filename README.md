@@ -2,7 +2,7 @@
 ag-Grid Angular 2 Component
 ==============
 
-This project contains the Angular 2 Component for use with ag-Grid.
+This project contains the Angular 2 Component for use with ag-Grid. This fork is to support ag-grid bundle with ag-grid-ng2 component usage in angular app. fixes https://github.com/ceolter/ag-grid-ng2/issues/15 
 
 Building
 ==============
