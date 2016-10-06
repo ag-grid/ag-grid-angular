@@ -1,4 +1,4 @@
-import {Component, EventEmitter, ViewEncapsulation, ViewContainerRef, ElementRef} from '@angular/core';
+import {Component, EventEmitter, ViewEncapsulation, ViewContainerRef, ElementRef, NgZone} from '@angular/core';
 
 import {Grid, GridOptions, GridApi, ColumnApi, ComponentUtil} from 'ag-grid/main';
 import {GridParams} from "ag-grid/main";
@@ -207,7 +207,8 @@ export class AgGridNg2 {
 
     constructor(elementDef:ElementRef,
                 private viewContainerRef:ViewContainerRef,
-                private ng2FrameworkFactory:Ng2FrameworkFactory) {
+                private ng2FrameworkFactory:Ng2FrameworkFactory,
+                private zone: NgZone) {
         this._nativeElement = elementDef.nativeElement;
 
         // create all the events generically. this is done generically so that
@@ -219,6 +220,12 @@ export class AgGridNg2 {
         this.ng2FrameworkFactory.setViewContainerRef(this.viewContainerRef);
     }
 
+    private escapeZone(timeoutOrInterval: Function, period: number, action: Function) {
+      this.zone.runOutsideAngular(() => {
+        timeoutOrInterval.apply(window, [ () => this.zone.run(action), period ])
+      }, period);
+    }
+
     // this gets called after the directive is initialised
     public ngOnInit():void {
         this.gridOptions = ComponentUtil.copyAttributesToGridOptions(this.gridOptions, this);
@@ -226,6 +233,8 @@ export class AgGridNg2 {
             globalEventListener: this.globalEventListener.bind(this),
             frameworkFactory: this.ng2FrameworkFactory
         };
+
+        this.gridOptions.intervalRunner = this.escapeZone.bind(this)
 
         new Grid(this._nativeElement, this.gridOptions, this.gridParams);
         this.api = this.gridOptions.api;
