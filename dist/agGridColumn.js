@@ -40,7 +40,7 @@ var AgGridColumn = (function () {
                 },] },
     ];
     /** @nocollapse */
-    AgGridColumn.ctorParameters = function () { return []; };
+    AgGridColumn.ctorParameters = [];
     AgGridColumn.propDecorators = {
         'childColumns': [{ type: core_1.ContentChildren, args: [AgGridColumn,] },],
         'headerName': [{ type: core_1.Input },],
