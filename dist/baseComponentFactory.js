@@ -25,7 +25,7 @@ var BaseComponentFactory = (function () {
         { type: core_1.Injectable },
     ];
     /** @nocollapse */
-    BaseComponentFactory.ctorParameters = function () { return []; };
+    BaseComponentFactory.ctorParameters = [];
     return BaseComponentFactory;
 }());
 exports.BaseComponentFactory = BaseComponentFactory;

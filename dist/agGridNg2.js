@@ -225,11 +225,11 @@ var AgGridNg2 = (function () {
                 },] },
     ];
     /** @nocollapse */
-    AgGridNg2.ctorParameters = function () { return [
+    AgGridNg2.ctorParameters = [
         { type: core_1.ElementRef, },
         { type: core_1.ViewContainerRef, },
         { type: ng2FrameworkFactory_1.Ng2FrameworkFactory, },
-    ]; };
+    ];
     AgGridNg2.propDecorators = {
         'columns': [{ type: core_1.ContentChildren, args: [agGridColumn_1.AgGridColumn,] },],
         'gridOptions': [{ type: core_1.Input },],

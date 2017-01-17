@@ -108,10 +108,10 @@ var Ng2FrameworkFactory = (function () {
         { type: core_1.Injectable },
     ];
     /** @nocollapse */
-    Ng2FrameworkFactory.ctorParameters = function () { return [
+    Ng2FrameworkFactory.ctorParameters = [
         { type: baseComponentFactory_1.BaseComponentFactory, },
         { type: core_1.NgZone, },
-    ]; };
+    ];
     return Ng2FrameworkFactory;
 }());
 exports.Ng2FrameworkFactory = Ng2FrameworkFactory;

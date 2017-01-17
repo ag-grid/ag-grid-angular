@@ -141,9 +141,9 @@ var Ng2ComponentFactory = (function (_super) {
         { type: core_1.Injectable },
     ];
     /** @nocollapse */
-    Ng2ComponentFactory.ctorParameters = function () { return [
+    Ng2ComponentFactory.ctorParameters = [
         { type: core_1.ComponentFactoryResolver, },
-    ]; };
+    ];
     return Ng2ComponentFactory;
 }(baseComponentFactory_1.BaseComponentFactory));
 exports.Ng2ComponentFactory = Ng2ComponentFactory;
