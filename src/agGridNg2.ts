@@ -120,7 +120,7 @@ export class AgGridNg2 implements AfterViewInit {
         let emitter = <EventEmitter<any>> (<any>this)[eventType];
         if (emitter) {
             emitter.emit(event);
-        } else {
+        } else if (!this.suppressEventWarnings) {
             console.log('ag-Grid-ng2: could not find EventEmitter: ' + eventType);
         }
     }
@@ -295,6 +295,7 @@ export class AgGridNg2 implements AfterViewInit {
     @Input() public pagination: any = undefined;
     @Input() public stopEditingWhenGridLosesFocus: any = undefined;
     @Input() public paginationAutoPageSize: any = undefined;
+    @Input() public suppressEventWarnings: any = undefined;
 
     /**
      * Outputs
